@@ -5,23 +5,23 @@
  */
 
 // Variables
-var regex = /Trump/i;
+var regex = /terrorisme/i;
 var search = regex.exec(document.body.innerText);
 
 
 // Functions
 function filterMild() {
-	console.log("Filtering Trump with Mild filter...");
+	console.log("Filtering Terror with Mild filter...");
 	return $(":contains('terrorisme'),:contains('terroriste'), :contains('attentat'), :contains('terreur')").filter("h1,h2,h3,h4,h5,p,span,li");
 }
 
 function filterDefault () {
-	console.log("Filtering Trump with Default filter...");
+	console.log("Filtering Terror with Default filter...");
 	return $(":contains('terrorisme'),:contains('terroriste'), :contains('attentat'), :contains('terreur'), :contains('islamiste'), :contains('radicalisé')").filter(":only-child").closest('div');
 }
 
 function filterVindictive() {
-	console.log("Filtering Trump with Vindictive filter...");
+	console.log("Filtering Terror with Vindictive filter...");
 	return $(":contains('terrorisme'),:contains('terroriste'), :contains('attentat'), :contains('terreur'),  :contains('islamiste'), :contains('radicalisé'), :contains('cazeneuve'), :contains('bataclan')").filter(":not('body'):not('html')");
 }
 
@@ -43,15 +43,15 @@ function filterElements(elements) {
 
 // Implementation
 if (search) {
-   console.log("Donald Trump found on page! - Searching for elements...");
+   console.log("Terroriste trouvé dans cette page, on cherche a le supprimer !");
    chrome.storage.sync.get({
      filter: 'aggro',
    }, function(items) {
 	   console.log("Filter setting stored is: " + items.filter);
 	   elements = getElements(items.filter);
 	   filterElements(elements);
-	   chrome.runtime.sendMessage({method: "saveStats", trumps: elements.length}, function(response) {
-			  console.log("Logging " + elements.length + " trumps."); 
+	   chrome.runtime.sendMessage({method: "saveStats", terror: elements.length}, function(response) {
+			  console.log("Logging " + elements.length + " terror."); 
 		 });
 	 });
   chrome.runtime.sendMessage({}, function(response) {});
