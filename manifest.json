@@ -1,12 +1,12 @@
 {
   "manifest_version": 2,
-  "name": "Trump Filter",
+  "name": "Fini le terrorisme",
   "version": "1.0",
-  "description": "Remove Donald Trump from the Internet.",
+  "description": "Fin du terrorisme sur internet. Vous pouvez reprendre une vie normale.",
   "page_action" :
   {
     "default_icon" : "images/icon-19x19.png",
-    "default_title" : "Warning: Trump is on this page!"
+    "default_title" : "Attention : Terroristes trouvé sur la page!"
   },
   "permissions": [
     "tabs",
