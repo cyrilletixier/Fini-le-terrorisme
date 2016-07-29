@@ -1,13 +1,13 @@
 function onMessage(request, sender, sendResponse) {
   if (request.method == "saveStats") { 
     console.log("Storing stats...");
-    console.log ("Adding " + request.trumps + " Trumps to stats.");
+    console.log ("Adding " + request.terrors + " terrors to stats.");
     chrome.storage.sync.get({
-      trumps: 0,
+      terrors: 0,
       pages: 0
     }, function(items) {
       chrome.storage.sync.set({
-        trumps: items.trumps + request.trumps,
+        terrors: items.terrors + request.terrors,
         pages: items.pages + 1
       });
     });
@@ -22,7 +22,7 @@ function onMessage(request, sender, sendResponse) {
     chrome.storage.sync.get({
       filter: 'aggro'
     }, function(items) {
-      ga('send', 'event', 'Filter', 'Trump', items.filter);
+      ga('send', 'event', 'Filter', 'Terror', items.filter);
     });
     sendResponse({});
   }
