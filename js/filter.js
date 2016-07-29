@@ -12,23 +12,23 @@ var search = regex.exec(document.body.innerText);
 // Functions
 function filterMild() {
 	console.log("Filtering Trump with Mild filter...");
-	return $(":contains('Trump'), :contains('TRUMP'), :contains('trump')").filter("h1,h2,h3,h4,h5,p,span,li");
+	return $(":contains('terrorisme'),:contains('terroriste'), :contains('attentat'), :contains('terreur')").filter("h1,h2,h3,h4,h5,p,span,li");
 }
 
 function filterDefault () {
 	console.log("Filtering Trump with Default filter...");
-	return $(":contains('Trump'), :contains('TRUMP'), :contains('trump')").filter(":only-child").closest('div');
+	return $(":contains('terrorisme'),:contains('terroriste'), :contains('attentat'), :contains('terreur'), :contains('islamiste'), :contains('radicalisé')").filter(":only-child").closest('div');
 }
 
 function filterVindictive() {
 	console.log("Filtering Trump with Vindictive filter...");
-	return $(":contains('Trump'), :contains('TRUMP'), :contains('trump')").filter(":not('body'):not('html')");
+	return $(":contains('terrorisme'),:contains('terroriste'), :contains('attentat'), :contains('terreur'),  :contains('islamiste'), :contains('radicalisé'), :contains('cazeneuve'), :contains('bataclan')").filter(":not('body'):not('html')");
 }
 
 function getElements(filter) {
-   if (filter == "mild") {
+   if (filter == "leger") {
 	   return filterMild();
-   } else if (filter == "vindictive") {
+   } else if (filter == "radical") {
 	   return filterVindictive();
    } else {
 	   return filterDefault();
